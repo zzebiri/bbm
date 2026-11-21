@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/bbm/favicon.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>real-estate</title>
+    <script>
+      (() => {
+        const themeKey = "theme";
+        const languageKey = "language";
+        const storedTheme = localStorage.getItem(themeKey);
+        const prefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
+        const theme = storedTheme === "light" || storedTheme === "dark" ? storedTheme : prefersDark ? "dark" : "light";
+
+        document.documentElement.classList.toggle("dark", theme === "dark");
+
+        const storedLanguage = localStorage.getItem(languageKey);
+        const language = storedLanguage === "fr" || storedLanguage === "ar" || storedLanguage === "en" ? storedLanguage : "en";
+
+        document.documentElement.lang = language;
+        document.documentElement.dir = language === "ar" ? "rtl" : "ltr";
+      })();
+    </script>
+    <script type="module" crossorigin src="/bbm/assets/index-BkShs1W4.js"></script>
+    <link rel="stylesheet" crossorigin href="/bbm/assets/index-CHSej24e.css">
+  </head>
+  <body>
+    <div id="root"></div>
+  </body>
+</html>
